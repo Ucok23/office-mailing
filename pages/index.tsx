@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import inbox from "../data/inbox";
 
 const Home: NextPage = () => {
   return (
@@ -45,10 +46,12 @@ const Home: NextPage = () => {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <h2>Inbox &rarr;</h2>
+            <ul>
+              {
+                inbox.map((mail) => mail.subject)
+              }
+            </ul>
           </a>
         </div>
       </main>
